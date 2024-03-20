@@ -38,3 +38,9 @@ jobs:
           cache: gradle
       - name: Tests
         run: ./gradlew test --warning-mode all --scan
+      - name: Upload Gradle HTML Reports
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: html-reports
+          path: ./spring_chat/build/reports/**/*.html
