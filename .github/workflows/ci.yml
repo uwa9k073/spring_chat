@@ -13,9 +13,9 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         - name: Set up JDK 21
-          uses: actions/setup-java@v3
+          uses: actions/setup-java@v4
           with:
             java-version: '21'
             distribution: 'temurin'
@@ -29,9 +29,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up JDK 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
@@ -40,7 +40,7 @@ jobs:
         run: ./gradlew test --warning-mode all --scan
       - name: Upload Gradle HTML Reports
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: html-reports
-          path: ./spring_chat/build/reports/**/*.html
+          path: ./build/reports/**/*.html
