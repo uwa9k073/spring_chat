@@ -1,4 +1,4 @@
-package com.github.uwa9k073.pg_service.exceptions;
+package com.github.uwa9k073.chat.exceptions;
 
 public class ResourceNotFound extends RuntimeException {
 
